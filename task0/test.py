@@ -7,7 +7,7 @@ import numpy
 net = model.Net()
 net.load_state_dict(torch.load(sys.argv[1]))
 data = pandas.read_csv("test.csv")
-inputs = numpy.asarray(data.iloc[:, 1:]).astype('float32')
+inputs = numpy.asarray(data.iloc[:, 1:]).astype('float64')
 output = net(torch.from_numpy(inputs))
 start = 10000
 end = start + len(output)
